@@ -258,7 +258,6 @@
 		9D5BDE172319326800CA51CC /* Bridge */ = {
 			isa = PBXGroup;
 			children = (
-				B1BE5C3F23F81CF3008D73BF /* Helpers */,
 				B1BE5C2B23F71459008D73BF /* Matlab-Bridge */,
 				B1BE5C2C23F7147A008D73BF /* Swift-Bridge */,
 				9D0B5B38233FF7F90017BD74 /* TypeDefs.h */,
@@ -339,6 +338,7 @@
 			children = (
 				B1F565052446073F002FDC7A /* Core */,
 				9D5BDE172319326800CA51CC /* Bridge */,
+				B1BE5C3F23F81CF3008D73BF /* Helpers */,
 				9FEDBA30236D80140084F84D /* BackgroundThread.h */,
 				9FEDBA2B236D80130084F84D /* Log.cpp */,
 				9FEDBA2C236D80130084F84D /* Log.h */,

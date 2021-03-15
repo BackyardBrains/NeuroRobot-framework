@@ -11,11 +11,7 @@
 #include <iostream>
 #include <chrono>
 
-#ifdef XCODE
-    #include "Bridge/Helpers/AudioHelper.hpp"
-#else
-    #include "Helpers/AudioHelper.hpp"
-#endif
+#include "Helpers/AudioHelper.hpp"
 
 // Boost includes
 #include <boost/thread/thread.hpp>
