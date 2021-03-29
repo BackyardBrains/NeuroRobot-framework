@@ -100,6 +100,9 @@ public:
     /// @param totalBytes Total number of bytes to send
     void sendAudio(int16_t *data, size_t totalBytes);
     
+    /// Check whether the sound is currently being sent.
+    bool isAudioCurrentlyBeingSent();
+    
     /// Total number of frame data bytes.
     size_t videoFrameBytes();
     

@@ -107,6 +107,9 @@ private:
     
 public:
     
+    /// Sending audio
+    bool sendingAudioInProgress = false;
+    
     /// Init socket and connect to serial socket.
     /// @param ip IP address of robot
     /// @param port Port of socket

@@ -149,6 +149,7 @@ void Socket::sendAudio(int16_t* data, size_t numberOfBytes)
     if (stateType != SocketStateConnected) {
         return;
     }
+    sendingAudioInProgress = true;
     int16_t* dataToSend = (int16_t*)malloc(numberOfBytes + 1);
     std::memcpy(dataToSend, data, numberOfBytes);
     std::thread thread(&Socket::sendAudioThreaded, this, dataToSend, numberOfBytes);
@@ -222,10 +223,12 @@ void Socket::sendAudioThreaded(int16_t* data, size_t numberOfBytes)
             sentBytes += packetSize;
             numberOfBytes = 0;
             
-            /// Wait until the song is over and add additionally 2 sec just in case
+            /// Wait until the song is over and wait for 2 seconds extra just in case
             sentDataInMilliseconds = (float)sentBytes / packetSize * packetSizeInMilliseconds;
             difference = sentDataInMilliseconds - elapsedTime;
-            boost::this_thread::sleep_for(boost::chrono::milliseconds(difference + 2000));
+            boost::this_thread::sleep_for(boost::chrono::milliseconds(difference + 3000));
+            
+            sendingAudioInProgress = false;
         }
         logMessage("audio chunk sent");
     }

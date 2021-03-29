@@ -122,6 +122,11 @@ void NeuroRobotManager::sendAudio(int16_t *data, size_t totalBytes)
     socketObject->sendAudio(data, totalBytes);
 }
 
+bool NeuroRobotManager::isAudioCurrentlyBeingSent()
+{
+    return socketObject->sendingAudioInProgress;
+}
+
 StreamStateType NeuroRobotManager::readStreamState()
 {
     return videoAndAudioObtainerObject->stateType;

@@ -10,11 +10,7 @@
 #define _Log_cpp
 
 #include "Log.h"
-#ifdef XCODE
-    #include "Bridge/Helpers/StringHelper.hpp"
-#else
-    #include "Helpers/StringHelper.hpp"
-#endif
+#include "Helpers/StringHelper.hpp"
 
 #include <iostream>
 

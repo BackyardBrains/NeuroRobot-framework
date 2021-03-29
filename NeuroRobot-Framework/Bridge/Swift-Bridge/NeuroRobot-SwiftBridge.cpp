@@ -94,6 +94,12 @@ extern "C" {
         robotObject->sendAudio(audioData, numberOfBytes);
     }
 
+    const bool swiftBridge_isAudioCurrentlyBeingSent(const void *object)
+    {
+        NeuroRobotManager *robotObject = (NeuroRobotManager *)object;
+        return robotObject->isAudioCurrentlyBeingSent();
+    }
+
     const StreamStateType swiftBridge_readStreamState(const void *object)
     {
         NeuroRobotManager *robotObject = (NeuroRobotManager *)object;

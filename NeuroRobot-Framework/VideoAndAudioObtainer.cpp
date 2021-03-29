@@ -8,11 +8,7 @@
 
 #include "VideoAndAudioObtainer.h"
 
-#ifdef XCODE
-    #include "Bridge/Helpers/StringHelper.hpp"
-#else
-    #include "Helpers/StringHelper.hpp"
-#endif
+#include "Helpers/StringHelper.hpp"
 
 #include <iostream>
 #include <thread>
